@@ -19,7 +19,7 @@ build () {
   ln -sf crosshair cell
   ln -sf right_ptr center_ptr
   ln -sf not-allowed circle
-  ln -sf move closedhand
+  ln -sf hand closedhand
   ln -sf pencil color-picker
   ln -sf ew-resize col-resize
   ln -sf help context-menu
@@ -41,9 +41,9 @@ build () {
   ln -sf nesw-resize ne-resize
   ln -sf ns-resize n-resize
   ln -sf nwse-resize nw-resize
-  ln -sf right_ptr openhand
+  ln -sf hand openhand
   ln -sf not-allowed pirate
-  ln -sf right_ptr pointing_hand
+  ln -sf hand pointing_hand
   ln -sf ew-resize right-arrow
   ln -sf crosshair right_tee
   ln -sf ns-resize row-resize
