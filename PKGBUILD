@@ -8,18 +8,18 @@ license=('GPL3')
 makedepends=('xorg-xcursorgen')
 
 build () {
-  mkdir ./x11
-  for f in ./Small/Linux/*.in; do
-    xcursorgen ./Small/Linux/"$f" ./x11/"${f%.in}"
+  cd $startdir/Small/Linux
+  for f in *.in; do
+    xcursorgen $startdir/Small/Linux/"$f" $srcdir/"${f%.in}"
   done
-  cd ./x11
+  cd $srcdir
   
   ln -sf move all-scroll
   ln -sf crosshair bottom-tee
   ln -sf crosshair cell
   ln -sf right_ptr center_ptr
   ln -sf not-allowed circle
-  ln -sf hand closedhand
+  ln -sf openhand closedhand
   ln -sf pencil color-picker
   ln -sf ew-resize col-resize
   ln -sf help context-menu
@@ -41,9 +41,8 @@ build () {
   ln -sf nesw-resize ne-resize
   ln -sf ns-resize n-resize
   ln -sf nwse-resize nw-resize
-  ln -sf hand openhand
   ln -sf not-allowed pirate
-  ln -sf hand pointing_hand
+  ln -sf openhand pointing_hand
   ln -sf ew-resize right-arrow
   ln -sf crosshair right_tee
   ln -sf ns-resize row-resize
@@ -181,7 +180,7 @@ build () {
 }
 
 package () {
-  install -Dm644 LICENSE "/usr/share/licenses/$pkgname/LICENSE"
-  mkdir -p /usr/share/icons/skyrim/cursors
-  cp ./x11/* /usr/share/icons/skyrim/cursors/
+  install -Dm644 $startdir/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  mkdir -p $pkgdir/usr/share/icons/skyrim/cursors
+  install -Dm644 $srcdir/* "$pkgdir/usr/share/icons/skyrim/cursors/"
 }
