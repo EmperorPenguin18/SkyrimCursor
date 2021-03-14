@@ -3,6 +3,7 @@ A Skyrim xcursor theme. Originally by Bethesda. Windows theme by karlomagno24 at
 
 To install on Linux:
 https://wiki.archlinux.org/index.php/Cursor_themes
+(or just use the PKGBUILD if you're on Arch)
 
 To install on Windows:
 https://www.howtogeek.com/664962/how-to-change-your-mouse-cursor-theme-on-windows-10/
